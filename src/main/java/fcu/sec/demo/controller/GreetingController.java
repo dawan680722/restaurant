@@ -14,4 +14,5 @@ public class GreetingController {
   public String sayHello(@RequestParam String name) {
     return "Hello " + name;
   }
+  //test
 }
