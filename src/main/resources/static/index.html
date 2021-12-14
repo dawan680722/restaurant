@@ -175,7 +175,7 @@
     const keyword = $('#restaurantKeyword').val();
         if(keyword.trim() === ''){
          emptyRestaurants();
-         getRestaurants('restauantss');
+         getRestaurants('restauants');
         }else{
           emptyRestaurants();
           getRestaurants('restaurants/'+keyword);//網址+keyword
@@ -186,7 +186,7 @@
      $('#restaurantList').empty();
     }
 
-   function addRestaurans(restaurants){
+   function addRestaurants(restaurants){
     for ( let restaurant of restaurants ) {
         let html = '<div class="card col-4">';
         html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';

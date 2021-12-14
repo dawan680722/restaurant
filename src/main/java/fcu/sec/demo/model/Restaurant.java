@@ -59,11 +59,11 @@ public class Restaurant {
 
   public String getRestaurantName() { return restaurantName;}
 
-  public void setRestaurantIntroducee(String restaurantIntroduce) {
+  public void setRestaurantIntroduce(String restaurantIntroduce) {
     this.restaurantIntroduce = restaurantIntroduce;
   }
 
-  public String getRestaurantIntroducee() {
+  public String getRestaurantIntroduce() {
     return restaurantIntroduce;
   }
 
