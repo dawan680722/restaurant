@@ -37,4 +37,14 @@ public class RestaurantService {
     }
   }
 
+  public List<Restaurant> getSouthRestaurants(String keyword){
+    try (Connection connection = sql2oDbHandler.getConnector().open()) {
+      String query = "select Area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
+          + " from restaurantcsv where area like :keyword";
+
+      return connection.createQuery(query)
+          .addParameter("keyword", "%"+keyword+"%")
+          .executeAndFetch(Restaurant.class);
+    }
+  }
 }

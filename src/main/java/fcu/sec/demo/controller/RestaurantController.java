@@ -27,4 +27,7 @@ public class RestaurantController {
   public List<Restaurant> getRestaurants(@PathVariable("keyword")String keyword){
     return restaurantManager.getRestaurants(keyword);
   }
+  public List<Restaurant> getSouthRestaurants(@PathVariable("keyword")String keyword){
+    return restaurantManager. getSouthRestaurants(keyword);
+  }
 }
