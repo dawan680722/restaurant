@@ -24,7 +24,11 @@ public class RestaurantController {
     return restaurantManager.getRestaurants();
   }
   @GetMapping("/restaurants/{keyword}")
-  public List<Restaurant> getRestaurants(@PathVariable("keyword")String keyword){
-    return restaurantManager.getRestaurants(keyword);
+  public List<Restaurant> getRestaurantk(@PathVariable("keyword")String keyword){
+    return restaurantManager.getRestaurantk(keyword);
+  }
+  @GetMapping("/restaurants/area/{areas}")
+  public List<Restaurant> getRestaurantarea(@PathVariable("areas")String areas){
+    return restaurantManager.getRestaurantarea(areas);
   }
 }

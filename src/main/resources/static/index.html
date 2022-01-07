@@ -13,7 +13,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">奶油龍蝦腳加水餃</a>
+        <a class="navbar-brand" href="#">
+            <img src="7808.png_300.png"width="30" height="30" class="d-inline-block align-top" alt=""> 奶油龍蝦腳加水餃</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    <a class="nav-link active" aria-current="page" href="/">首頁</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -29,10 +30,10 @@
                         地區
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">北部</a></li>
-                        <li><a class="dropdown-item" href="#">中部</a></li>
-                        <li><a class="dropdown-item" href="#">南部</a></li>
-                        <li><a class="dropdown-item" href="#">東部</a></li>
+                        <li><a class="dropdown-item" href="#" id="north">北部</a></li>
+                        <li><a class="dropdown-item" href="#" id="middle">中部</a></li>
+                        <li><a class="dropdown-item" href="#" id="south">南部</a></li>
+                        <li><a class="dropdown-item" href="#" id="east">東部</a></li>
                     </ul>
                 </li>
 
@@ -243,7 +244,7 @@
     </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="submit" class="btn btn-primary">註冊</button>
+            <button type="submit" class="btn btn-primary" id="register">註冊</button>
         </div>
             </form>
         </div>
@@ -256,6 +257,7 @@
     <div class="input-group mb-3 mt-5">
         <input type="text" class="form-control" placeholder="餐廳名稱" aria-label="restaurant name" aria-describedby="searchRestaurant" id="restaurantKeyword">
         <button class="btn btn-outline-secondary" type="button" id="searchRestaurant">搜尋</button>
+
     </div>
 
 
@@ -296,6 +298,27 @@
           emptyRestaurants();
           getRestaurants('restaurants/'+keyword);//網址+keyword
         }
+    });
+
+    $( '#north' ).click(function() {
+    const areas = '北部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#middle' ).click(function() {
+    const areas = '中部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#south' ).click(function() {
+    const areas = '南部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#east' ).click(function() {
+    const areas = '東部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
     });
 
     function emptyRestaurants(){

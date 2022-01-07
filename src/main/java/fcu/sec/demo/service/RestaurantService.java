@@ -20,19 +20,30 @@ public class RestaurantService {
 
   public List<Restaurant> getRestaurants() {
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "select Area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
+      String query = "select area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
           + " from restaurantcsv";
 
       return connection.createQuery(query).executeAndFetch(Restaurant.class);
     }
   }
-  public List<Restaurant> getRestaurants(String keyword){
+  public List<Restaurant> getRestaurantk(String keyword){
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "select Area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
+      String query = "select area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
           + " from restaurantcsv where restaurantName like :keyword";
 
       return connection.createQuery(query)
           .addParameter("keyword", "%"+keyword+"%")
+          .executeAndFetch(Restaurant.class);
+    }
+  }
+
+  public List<Restaurant> getRestaurantarea(String areas){
+    try (Connection connection = sql2oDbHandler.getConnector().open()) {
+      String query = "select area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce"
+          + " from restaurantcsv where area like :areas";
+
+      return connection.createQuery(query)
+          .addParameter("areas","%"+areas+"%")
           .executeAndFetch(Restaurant.class);
     }
   }
