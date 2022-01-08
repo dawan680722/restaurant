@@ -95,22 +95,22 @@
             <div class="modal-body">
                 <form class="needs-validation" novalidate>
                     <div class ="form-group">
-                        <label for="username">姓名</label>
-                        <input type="text" class="form-control" id="username" placeholder="請輸入姓名" required>
+                        <label for="username">ID</label>
+                        <input type="text" class="form-control" id="username" placeholder="請輸入ID" required>
                         <div class="invalid-feedback">
-                            請輸入姓名!
+                            請輸入ID!
                         </div>
                     </div>
                     <div class ="form-group">
-                        <label for="phone">手機號碼</label>
-                        <input type="text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" required>
+                        <label for="password">請輸入密碼</label>
+                        <input type="password" class="form-control" id="password" placeholder="請輸入您的密碼" required>
                         <div class="invalid-feedback">
-                            請輸入手機號碼!
+                            請輸入密碼!
                         </div>
                     </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                <button type="submit" class="btn btn-primary">登入</button>
+                <button type="submit" class="btn btn-primary" id="login">登入</button>
             </div>
             </form>
             </div>
@@ -741,6 +741,17 @@ $('.carousel').carousel({
           getRestaurants('restaurants/'+keyword);//網址+keyword
         }
     });
+    $( '#login' ).click(function() {
+    const ID = $('#username').val();
+    const mypassword = $('#password').val();
+        if(ID.trim() === 'a001'&&mypassword.trim() === 1000){
+         emptyusers();
+         request.getRequestDispatcher("/restaurantDetail.html").forward(request, response);
+         return;
+        }else{
+          emptyusers();
+        }
+    });
 
     $( '#north' ).click(function() {
     const areas = '北部';
@@ -817,6 +828,11 @@ $('.carousel').carousel({
     function emptyRestaurants(){
      $('#restaurantList').empty();
     }
+    function emptyusers(){
+     $('#username').val("");
+     $('#password').val("");
+    }
+
 
    function addRestaurants(restaurants){
     for ( let restaurant of restaurants ) {
@@ -866,23 +882,7 @@ $('.carousel').carousel({
         });
   }
 
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+
 
 </script>
 <style>

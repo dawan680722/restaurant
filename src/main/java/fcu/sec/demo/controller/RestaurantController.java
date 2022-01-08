@@ -51,4 +51,5 @@ public class RestaurantController {
   public List<Restaurant> getRestaurantprice4(@PathVariable("prices")String prices){
     return restaurantManager.getRestaurantprice4(prices);
   }
+
 }
