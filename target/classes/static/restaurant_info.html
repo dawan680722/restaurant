@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>奶油龍蝦腳加水餃</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="7808.png_300.png"width="30" height="30" class="d-inline-block align-top" alt=""> 奶油龍蝦腳加水餃 </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/index.html">首頁</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        地區
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">北部</a></li>
+                        <li><a class="dropdown-item" href="#">中部</a></li>
+                        <li><a class="dropdown-item" href="#">南部</a></li>
+                        <li><a class="dropdown-item" href="#">東部</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        類別
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">中式</a></li>
+                        <li><a class="dropdown-item" href="#">日式</a></li>
+                        <li><a class="dropdown-item" href="#">義式</a></li>
+                        <li><a class="dropdown-item" href="#">法式</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        價位
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">1-200</a></li>
+                        <li><a class="dropdown-item" href="#">200-500</a></li>
+                        <li><a class="dropdown-item" href="#">500-800</a></li>
+                        <li><a class="dropdown-item" href="#">800-1000</a></li>
+                        <li><a class="dropdown-item" href="#">1000以上</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    登入
+                </button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    註冊
+                </button>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">訂單資訊</a>
+                </li>
+            </ul>
+
+            <!--<form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>-->
+        </div>
+    </div>
+</nav>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">登入</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class ="form-group">
+                        <label for="loginaccount">信箱</label>
+                        <input type="email" class="form-control" id="loginaccount" placeholder="name@example.com" required>
+                        <div class="invalid-feedback">
+                            請輸入信箱!
+                        </div>
+                    </div>
+                    <div class ="form-group">
+                        <label for="loginpw">密碼</label>
+                        <input type="password" class="form-control" id="loginpw" placeholder="請輸入您的密碼" required>
+                        <div class="invalid-feedback">
+                            請輸入密碼!
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                        <button type="submit" class="btn btn-primary">登入</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel2">註冊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class ="row">
+                        <div class="col-6 mb-3">
+                            <label for="lastname">姓</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="請輸入您的姓氏" required>
+                            <div class="invalid-feedback">
+                                請輸入姓名!
+                            </div>
+                        </div>
+                        <div class ="col-6 mb-3">
+                            <label for="firstname">名</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="請輸入您的名字" required>
+                            <div class="invalid-feedback">
+                                請輸入姓名!
+                            </div>
+                        </div>
+                    </div>
+                    <div class ="form-group">
+                        <label for="Email">Email信箱</label>
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="name@example.com" required>
+                        <small id="emailHelp" class="form-text text muted">我們不會洩漏你的個人資料</small>
+                        <div class="invalid-feedback">
+                            請輸入信箱!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密碼</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="請輸入您的密碼"required>
+                        <div class="invalid-feedback">
+                            請輸入密碼!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2"></label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="請再輸入一次您的密碼"required>
+                        <div class="invalid-feedback">
+                            請再輸入一次密碼!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class ="col-auto">
+                            <label for="exampleFormControlSelect1">生日月份</label>
+                            <select class="form-control" id="exampleFormControlSelect1"required>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                請選擇月份!
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <label for="exampleFormControlSelect2">生日日期</label>
+                            <select class="form-control" id="exampleFormControlSelect2"required>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                請選擇日期!
+                            </div>
+                        </div>
+                    </div>
+                    <div class ="form-group">
+                        <label for="phone">手機號碼</label>
+                        <input type="number" class="form-control" id="phone" aria-describedby="phonenumber" placeholder="請輸入您的手機號碼"required>
+                        <small id="phonenumber" class="form-text text muted">我們不會洩漏你的個人資料</small>
+                        <div class="invalid-feedback">
+                            請輸入手機號碼!
+                        </div>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1"required>
+                        <label class="form-check-label" for="exampleCheck1">我已閱讀並同意《隱私權保護政策》及《定型化契約條款》</label>
+                        <div class="invalid-feedback">
+                            必須同意才能提交!
+                        </div>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                        <label class="form-check-label" for="exampleCheck2">我願意收到本網站電子報</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                        <button type="submit" class="btn btn-primary">註冊</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="text-center"> </h1>
+    <h1 class="text-center">餐廳資訊</h1>
+
+    <div class="mt-3 row">
+        <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;">
+                <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true" style = "color: #white;">資訊</button>
+                <button class="nav-link" id="nav-booking-tab" data-bs-toggle="tab" data-bs-target="#nav-booking" type="button" role="tab" aria-controls="nav-booking" aria-selected="false" style = "color: #white;">訂位</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent" style="background-color: rgba(235, 233, 229,1)">
+            <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                <h1 class="sc-iqHYmW koallP"><strong><br>頤宮中餐廳 - 君品酒店 Le Palais <br></strong></h1>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="restaurant1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="restaurant2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="restaurant3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <br>
+
+                <div class="sc-bdfBQB jcCDbN">
+                    <div>
+                        <p class="sc-iqHYmW jvdieq">蟬聯四屆《台北米其林指南》三星餐廳(2018-2021)。</p>
+                        <p class="sc-iqHYmW jvdieq">嚴選當令食材，供應中華菜系料理；精巧飲茶點心或經典筵席名菜，</p>
+                        <p class="sc-iqHYmW jvdieq">中法美學融合的絕美空間，廣獲國內外好評，獲選兩岸美食論壇十大名店殊榮。</p>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="info-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.2340717748216!2d121.5157279910514!3d25.049133757067075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96d752e86af%3A0x90777b7140abcdea!2z5ZCb5ZOB6YWS5bqXIC0g6aCk5a6u5Lit6aSQ5buzIExlIFBhbGFpcw!5e0!3m2!1szh-TW!2stw!4v1641658805753!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </th>
+                            <td>
+                                <div class="info-body" class="sc-bdfBQB cWkFeH">
+                                    <p class="sc-iqHYmW jvdieq">📍地點</p>
+                                    <p class="sc-iqHYmW jvdieq">台北市大同區承德路一段3號17樓</p>
+                                    <p class="sc-iqHYmW jvdieq">📞電話</p>
+                                    <p class="sc-iqHYmW jvdieq">02-2181-9985</p>
+                                    <p class="sc-iqHYmW jvdieq">⏰營業時間</p>
+                                    <p class="sc-iqHYmW jvdieq">星期日	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期一	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期二	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期三	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期四	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期五	11:30-14:3017:30-21:30</p>
+                                    <p class="sc-iqHYmW jvdieq">星期六	11:30-14:3017:30-21:30</p>
+                                    <br>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-booking" role="tabpanel" aria-labelledby="nav-booking-tab">
+                <div class="input-group mb-3 mt-5">
+                    <div class="modal-body">
+                        <div class="sc-bdfBQB bstufh">
+                            <div class="sc-bdfBQB dWKzqh">
+                                <h1 class="sc-iqHYmW koallP"><strong>頤宮中餐廳 - 君品酒店 Le Palais </strong></h1>
+                                <p class="sc-iqHYmW jvdieq">📍台北市大同區承德路一段3號17樓</p>
+                            </div>
+
+                        </div>
+                        <article class="sc-kstqJO gKciJj markdown">
+                            <p>⚠️ <strong>【預約時的注意事項】</strong></p>
+                            <ol><li>開放式座位是每個月1號凌晨00:00開放下一個月的訂位</li>
+                                <li>預訂座位，訂位時提供信用卡資訊，將做為座位訂位擔保，如於用餐前48小時以內(含)，將酌收每位NT$500的取消費用，恕不退還</li>
+                                <li>開放式座位皆無窗景，座位依照當日現場安排為主，若有包廂訂席需求，請主動電洽餐廳服務人員</li>
+                                <li>菜單上的預訂菜色皆有限量，如有需要預訂，請儘早與餐廳服務人員聯繫，餐廳電話：02-21819985或86</li>
+                            </ol>
+                            <p>👔 <strong>【貼心提醒-本餐廳設有服飾要求】</strong></p>
+                            <ol>
+                                <li>女士請勿穿著拖鞋。</li>
+                                <li>男士與三歲（含）以上青年男士需穿著長度至腳跟之長褲及密頭密踭鞋；恕不接受涼鞋、拖鞋、勃肯鞋、短褲、背心，也請提醒同行貴賓。<br>（餐廳保有拒絕不符合服裝要求之賓客入內用餐之權利）</li>
+                            </ol>
+                            <p>🚫 <strong>【為維持寧靜舒適與完善衛生之用餐環境，請注意以下】</strong></p>
+                            <ol>
+                                <li>用餐期間，請降低談話音量，並請家長照顧並提醒孩童不喧嘩及奔跑，以防影響其他賓客用餐。</li>
+                                <li>本餐廳僅提供導盲犬進入，其餘寵物全面禁止攜帶，造成不便，敬祈見諒。</li>
+                            </ol>
+                            <p>🍾  <strong>【酒水服務費】</strong><br>自備酒類會酌收酒水服務費：紅、白酒NT$500元/瓶 (750ML)，烈酒NT$1000元/瓶 (1000ML)。如需換杯，杯子清潔費另外計價 50元/個</p>
+                            <p>🎉 <strong>【慶祝活動】</strong><br>如有事先告知需慶生，本餐廳會招待壽桃</p>
+                            <p>📒 <strong>【其他注意事項】</strong></p>
+                            <ol>
+                                <li>所有價格以新台幣表示，並需加收一成服務費</li>
+                                <li>為了提供貴客完美用餐體驗與品質、尊重每位用心服務的員工及其他用餐客人，故本餐廳制定上述說明，謝謝您的體諒與配合</li>
+                            </ol>
+                        </article>
+                        <form class="needs-validation" novalidate>
+                            <div class ="col-auto">
+                                <label for="exampleFormControlSelect1">用餐人數</label>
+                                <select class="form-control" id="customer_num"required>
+                                    <option value="1">1 人</option>
+                                    <option value="2">2 人</option>
+                                    <option value="3">3 人</option>
+                                    <option value="4">4 人</option>
+                                    <option value="5">5 人</option>
+                                    <option value="6">6 人</option>
+                                    <option value="7">7 人</option>
+                                    <option value="8">8 人</option>
+                                    <option value="9">9 人</option>
+                                    <option value="10">10 人</option>
+                                    <option value="11" disabled>11人(含)以上大型訂位服務請洽店家</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    請選擇人數!
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class ="col-auto">
+                                    <label for="exampleFormControlSelect1">用餐月份</label>
+                                    <select class="form-control" id="booking_mon"required>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        請選擇月份!
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="exampleFormControlSelect2">用餐日期</label>
+                                    <select class="form-control" id="booking_date"required>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                        <option>29</option>
+                                        <option>30</option>
+                                        <option>31</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        請選擇日期!
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="exampleFormControlSelect2">用餐時間</label>
+                                    <select class="form-control" id="booking_time"required>
+                                        <option>09:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>12:00</option>
+                                        <option>13:00</option>
+                                        <option>14:00</option>
+                                        <option>15:00</option>
+                                        <option>16:00</option>
+                                        <option>17:00</option>
+                                        <option>18:00</option>
+                                        <option>19:00</option>
+                                        <option>20:00</option>
+                                        <option>21:00</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        請選擇時間!
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label for="lastname">訂位人姓名</label>
+                                    <input type="text" class="form-control" id="customer_name" placeholder="請輸入您的姓名" required>
+                                    <div class="invalid-feedback">
+                                        請輸入姓名!
+                                    </div>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                    <label class="form-check-label" for="inlineRadio1">女士</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">先生</label>
+                                </div>
+
+                                <div class ="form-group">
+                                    <label for="lastname">訂位人手機號碼</label>
+                                    <input type="text" class="form-control" id="customer_phone" placeholder="請輸入您的手機號碼" required>
+                                    <div class="invalid-feedback">
+                                        請輸入手機號碼!
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;">確認訂位</button>
+                                </div>
+
+                        </form>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <br>
+
+    <br>
+    <br>
+    <footer class="text-center text-white fixed-bottom" style="background-color: #DA9C8B;">
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright © 2022 All Rights Reserved:
+            <a class="text-white" href="index.html">奶油龍蝦腳加水餃.com</a>
+        </div>
+    </footer>
+
+
+</div>
+</div>
+
+<style>
+    :root {
+        --color-gold: #EACB53;
+    }
+
+    * {
+        font-family: 'Fjalla One';
+    }
+
+    body {
+        background-color:#8D8B86;
+    }
+
+    #app {
+        display: flex;
+        align-items: space;
+        justify-content: center;
+        //position: absolute;
+        top: 100%;
+        transform: translate3d(50%, 0%, 0);
+        width: 680px;
+        height: 100%;
+    }
+
+    svg {
+        //position: absolute;
+        height: 100%;
+        width: 100%;
+        flex: 3;
+    }
+
+    path {
+        stroke: white;
+        fill: transparent;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    path:hover {
+        fill: var(--color-gold);
+        transform: translate(-5px, -5px);
+    }
+
+    .title_area {
+        flex: 2;
+        margin-right: 7vw;
+        margin-top: 10vh;
+        color: white;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: min(10vw, 2em);
+        color: var(--color-gold);
+        padding-left: 10px;
+    }
+
+    hr {
+        width: 100px;
+        margin-left: 0;
+        border: none;
+        border-bottom: solid 2px white;
+    }
+
+    .forcast h2,
+    .forcast h4,
+    .forcast h5 {
+        margin: 0;
+    }
+
+    .forcast h2 {
+        margin-top: 20px;
+        font-size:12px;
+    }
+   }
+
+</style>
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+<script>
+  $( document ).ready( function() {
+    console.log( "ready!" );
+    emptyRestaurants();
+    getRestaurants('restaurants')
+  });
+
+    $( '#searchRestaurant' ).click(function() {
+    const keyword = $('#restaurantKeyword').val();
+        if(keyword.trim() === ''){
+         emptyRestaurants();
+         getRestaurants('restauants');
+        }else{
+          emptyRestaurants();
+          getRestaurants('restaurants/'+keyword);//網址+keyword
+        }
+    });
+
+    function emptyRestaurants(){
+     $('#restaurantList').empty();
+    }
+
+   function addRestaurants(restaurants){
+    for ( let restaurant of restaurants ) {
+        let html = '<div class="card col-4">';
+        html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '<div class="card-body">';
+        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
+        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
+        html += '<a href="#" class="btn btn-primary">' + restaurant.priceRange + '</a>';
+        html += '</div>';
+        html += '</div>';
+        $('#restaurantList').append(html);
+      }
+   }
+
+  function getRestaurants(targetUrl){
+     // Using the core $.ajax() method
+      $.ajax({
+          // The URL for the request
+          url: targetUrl,
+
+          // Whether this is a POST or GET request
+          type: "GET",
+
+          // The type of data we expect back
+          dataType : "json",
+      })
+        // Code to run if the request succeeds (is done);
+        // The response is passed to the function
+        .done(function( json ) {
+          let restaurants = json;
+          addRestaurants(restaurants);
+        })
+        // Code to run if the request fails; the raw request and
+        // status codes are passed to the function
+        .fail(function( xhr, status, errorThrown ) {
+          alert( "Sorry, there was a problem!" );
+          console.log( "Error: " + errorThrown );
+          console.log( "Status: " + status );
+          console.dir( xhr );
+        })
+        // Code to run regardless of success or failure;
+        .always(function( xhr, status ) {
+          //alert( "The request is complete!" );
+          console.log( "The request is complete!" );
+        });
+  }
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>
+</body>
+</html>
