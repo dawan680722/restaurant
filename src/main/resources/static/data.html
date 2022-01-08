@@ -47,9 +47,9 @@
 <div class="container ">
     <div class="row ">
         <div class="col-2 mx-auto ">
-            <div class="item mx-100">
-                <p>&nbspXXX先生/小姐您好</p>
-                <p>以下是您的訂位資訊</p>
+            <div class="item mx-100" >
+                <p class="text-white">&nbspXXX先生/小姐您好</p>
+                <p class="text-white">以下是您的訂位資訊</p>
             </div>
         </div>
     </div>
@@ -91,7 +91,12 @@
         </div>
     </div>
 </div>
+<style>
 
+     body {
+        background-color: #5F5F5F;
+    }
+</style>
 
 
 <!-- Optional JavaScript; choose one of the two! -->
@@ -107,27 +112,16 @@
 <script>
   $( document ).ready( function() {
     console.log( "ready!" );
-    emptyRestaurants();
-    getRestaurants('restaurants')
+    emptyDatas();
+    getDatas('Datas')
   });
 
-    $( '#searchRestaurant' ).click(function() {
-    const keyword = $('#restaurantKeyword').val();
-        if(keyword.trim() === ''){
-         emptyRestaurants();
-         getRestaurants('restauants');
-        }else{
-          emptyRestaurants();
-          getRestaurants('restaurants/'+keyword);//網址+keyword
-        }
-    });
-
-    function emptyRestaurants(){
-     $('#restaurantList').empty();
+    function emptyDatas(){
+     $('#dataList').empty();
     }
 
-   function addRestaurants(restaurants){
-    for ( let restaurant of restaurants ) {
+   function addDatas(datas){
+    for ( let data of datas ) {
         let html = '<div class="card col-4">';
         html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
         html += '<div class="card-body">';
@@ -136,11 +130,11 @@
         html += '<a href="#" class="btn btn-primary">' + restaurant.priceRange + '</a>';
         html += '</div>';
         html += '</div>';
-        $('#restaurantList').append(html);
+        $('#dataList').append(html);
       }
    }
 
-  function getRestaurants(targetUrl){
+  function getDatas(targetUrl){
      // Using the core $.ajax() method
       $.ajax({
           // The URL for the request
@@ -155,8 +149,8 @@
         // Code to run if the request succeeds (is done);
         // The response is passed to the function
         .done(function( json ) {
-          let restaurants = json;
-          addRestaurants(restaurants);
+          let datas = json;
+          addDatas(datas);
         })
         // Code to run if the request fails; the raw request and
         // status codes are passed to the function
