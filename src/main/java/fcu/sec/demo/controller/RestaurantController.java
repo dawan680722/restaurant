@@ -24,7 +24,31 @@ public class RestaurantController {
     return restaurantManager.getRestaurants();
   }
   @GetMapping("/restaurants/{keyword}")
-  public List<Restaurant> getRestaurants(@PathVariable("keyword")String keyword){
-    return restaurantManager.getRestaurants(keyword);
+  public List<Restaurant> getRestaurantk(@PathVariable("keyword")String keyword){
+    return restaurantManager.getRestaurantk(keyword);
+  }
+  @GetMapping("/restaurants/area/{areas}")
+  public List<Restaurant> getRestaurantarea(@PathVariable("areas")String areas){
+    return restaurantManager.getRestaurantarea(areas);
+  }
+  @GetMapping("/restaurants/sort/a/{sorts}")
+  public List<Restaurant> getRestaurantsort(@PathVariable("sorts")String sorts){
+    return restaurantManager.getRestaurantsort(sorts);
+  }
+  @GetMapping("/restaurants/price/1/{prices}")
+  public List<Restaurant> getRestaurantprice1(@PathVariable("prices")String prices){
+    return restaurantManager.getRestaurantprice1(prices);
+  }
+  @GetMapping("/restaurants/price/2/{prices}")
+  public List<Restaurant> getRestaurantprice2(@PathVariable("prices")String prices){
+    return restaurantManager.getRestaurantprice2(prices);
+  }
+  @GetMapping("/restaurants/price/3/{prices}")
+  public List<Restaurant> getRestaurantprice3(@PathVariable("prices")String prices){
+    return restaurantManager.getRestaurantprice3(prices);
+  }
+  @GetMapping("/restaurants/price/4/{prices}")
+  public List<Restaurant> getRestaurantprice4(@PathVariable("prices")String prices){
+    return restaurantManager.getRestaurantprice4(prices);
   }
 }
