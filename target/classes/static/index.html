@@ -4,6 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -23,6 +28,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">首頁</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/restaruant_info.html">訂位</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -444,15 +453,57 @@
             <h1>Taiwan<span>///</span><br>Restaurant Map<br></h1>
             <hr />
 
+<<<<<<<<< Temporary merge branch 1
             <div class="forcast" v-if="now_area">
                 <h5>{{now_area.place}}</h5>
                 <h4>{{now_area.low}}~{{now_area.high}}度</h4>
                 <h2>{{now_area.weather}}</h2>
+                <h6>{{now_area.restaurant}}</h6>
             </div>
         </div>
     </div>
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://as.chdev.tw/web/article/photos/1/5/6/9ebaa1896b1601d3df7ae77d7f491b8b5d727e02.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>各縣市的美食餐廳任您挑選</h5>
+                        <p>不想錯過美食?</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://d1ralsognjng37.cloudfront.net/fd9d21bf-3e24-41e6-95c7-f39ac76a21d1.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>快速又方便</h5>
+                        <p>不想要現場等很久?</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.soeasyedu.com.tw/updimg/blog_content/2020/0109.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>註冊會員立即開始!</h5>
+                        <p>快點來訂位!</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 
-    <h1 class="mt-3" style=color:#B99362>餐廳瀏覽</h1>
+    <h1 class="mt-3" style=color:#FFDF9E>🍽餐廳瀏覽</h1>
 
     <div class="input-group mb-3 mt-5">
         <input type="text" class="form-control" placeholder="餐廳名稱" aria-label="restaurant name" aria-describedby="searchRestaurant" id="restaurantKeyword">
@@ -464,7 +515,7 @@
 </div>
 <style>
     :root {
-        --color-gold: #B99362;
+        --color-gold: #EACB53;
     }
 
     * {
@@ -472,7 +523,7 @@
     }
 
     body {
-        background-color: #5F5F5F;
+        background-color:#8D8B86;
     }
 
     #app {
@@ -539,9 +590,17 @@
         margin-top: 20px;
         font-size:12px;
     }
+   }
+    .carousel .carousel-item {
+  height: 300px;
+}
 
+.carousel .carousel-item img {
+  min-height: 100px;
+  max-height: 200px;
+  object-fit: cover;
+}
 </style>
-
 
 
 
@@ -552,6 +611,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -560,6 +621,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 -->
 <script>
+$('.carousel').carousel({
+  interval: 1000
+})
     let api_key = 'CWB-68F37882-8D75-4CCA-BCE5-DAF6B09E70F7'
     let url = `https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-D0047-091?Authorization=${api_key}&downloadType=WEB&format=JSON`
     var place_data = [
@@ -743,6 +807,7 @@
 
 <script>
     var paths;
+    $(document).off('.data-api')
     const app = new Vue({
         el: '#app',
         mounted() {
@@ -777,6 +842,7 @@
                     let high = result.weatherElement.find(el => el.elementName === 'MaxT').time[0].elementValue.value
                     let low = result.weatherElement.find(el => el.elementName === 'MinT').time[0].elementValue.value
                     let weather = result.weatherElement.find(el => el.elementName === 'Wx').time[0].elementValue[0].value
+                    let restaurant =
                     data = {
                         place: this.filter,
                         low: low,
@@ -788,8 +854,25 @@
             }
         },
     })
-</script>
-<script>
+
+
+   function addRestaurants(restaurants){
+    for ( let restaurant of restaurants ) {
+        let html = '<div class="card bg-light col-4 ">';
+        html += '<img src="' + restaurant.picture + '" class="card-img-top img-thumbnail rounded"' + '" style="height: 250px;" alt="' + restaurant.restaurantName + '">';
+        //html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '<div class="card-body">';
+        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
+        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
+       // html += '<a href="#" class="btn btn-outline-primary">' + restaurant.priceRange + '</a>';
+        html += '<a href="restaurant_info" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
+        html += '</div>';
+        html += '</div>';
+        $('#restaurantList').append(html);
+      }
+    }
+
+
   $( document ).ready( function() {
     console.log( "ready!" );
     emptyRestaurants();
@@ -885,12 +968,13 @@
 
    function addRestaurants(restaurants){
     for ( let restaurant of restaurants ) {
-        let html = '<div class="card col-4">';
+        let html = '<div class="card bg-primary col-4 ">';
         html += '<img src="' + restaurant.picture + '" class="card-img-top img-thumbnail rounded"' + '" style="height: 250px;" alt="' + restaurant.restaurantName + '">';
+        //html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
         html += '<div class="card-body">';
         html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
-        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
-        html += '<a href="#" class="btn btn-primary">' + restaurant.priceRange + '</a>';
+        html += '<p class="card-text">' +restaurant.restaurantIntroduce + '</p>';
+        html += '<a href="restaurant_info" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
         html += '</div>';
         html += '</div>';
         $('#restaurantList').append(html);
@@ -949,5 +1033,38 @@
 })();
 
 </script>
+<style>
+
+    .card-text{
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color:#938976;
+        white-space: normal;
+    }
+
+        .bg-primary{
+
+         background-color: rgba(235, 233, 229,1)!important;
+        opacity: 1;
+        }
+
+       .btn-primary:hover, .btn-primary:focus, .btn-primary:active:hover{
+      color: #white;
+      background-color: brown;
+      border-color: brown;
+}
+
+
+
+
+
+
+
+
+</style>
 </body>
 </html>
