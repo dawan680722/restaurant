@@ -113,7 +113,7 @@
   $( document ).ready( function() {
     console.log( "ready!" );
     emptyDatas();
-    getDatas('Datas')
+    getDatas('datas')
   });
 
     function emptyDatas(){
@@ -123,11 +123,11 @@
    function addDatas(datas){
     for ( let data of datas ) {
         let html = '<div class="card col-4">';
-        html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '< '" class="card-img-top" alt="' + data.restaurantName + '">';
         html += '<div class="card-body">';
-        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
-        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
-        html += '<a href="#" class="btn btn-primary">' + restaurant.priceRange + '</a>';
+        html += '<h5 class="card-title">' + data.restaurantName + '</h5>';
+        html += '<p class="card-text">' + data.people + '</p>';
+        html += '<a href="#" class="btn btn-primary">' + data.phone + '</a>';
         html += '</div>';
         html += '</div>';
         $('#dataList').append(html);
