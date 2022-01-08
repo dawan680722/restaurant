@@ -147,16 +147,16 @@
         </div>
     </div>
     <div class ="form-group">
-        <label for="Email">Email信箱</label>
-        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="name@example.com" required>
+        <label for="email">Email信箱</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@example.com" required>
         <small id="emailHelp" class="form-text text muted">我們不會洩漏你的個人資料</small>
         <div class="invalid-feedback">
             請輸入信箱!
         </div>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">密碼</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="請輸入您的密碼"required>
+        <label for="password">密碼</label>
+        <input type="password" class="form-control" id="password" placeholder="請輸入您的密碼"required>
         <div class="invalid-feedback">
             請輸入密碼!
         </div>
@@ -170,8 +170,8 @@
         </div>
     <div class="row">
         <div class ="col-auto">
-        <label for="exampleFormControlSelect1">生日月份</label>
-        <select class="form-control" id="exampleFormControlSelect1"required>
+        <label for="Mon">生日月份</label>
+        <select class="form-control" id="Mon"required>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -190,8 +190,8 @@
             </div>
     </div>
     <div class="col-auto">
-        <label for="exampleFormControlSelect2">生日日期</label>
-        <select class="form-control" id="exampleFormControlSelect2"required>
+        <label for="Date">生日日期</label>
+        <select class="form-control" id="Date"required>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -1061,5 +1061,61 @@ $('.carousel').carousel({
 
 
 </style>
+
+<script>
+  $( document ).ready( function() {
+    $('#alertSuccess').hide();
+    emptySignupFields();
+    console.log( "ready!" );
+  });
+
+
+  $('#register').click(function() {
+
+    const lastname = $('#lastname').val();
+    const firstname = $('#firstname').val();
+    const Date = $('#Date').val();
+    const Mon = $('#Mon').val();
+    const password = $('#password').val();
+    const email = $('#email').val();
+    const phone = $('#phone').val();
+    $.ajax({
+      type: "POST",
+      contentType:"application/json; charset=utf-8",
+      url: "register",
+      data: '{"firstname":"' + firstname + '", "lastname":"' + lastname + '", "mypassword":"' + password + '","birthdayDate":"' + Date + '","birthdayMon":"' + Mon + '", "email":"' + email + '", "phone":"' + phone + '"}',
+      dataType : "json"
+    }).done(function( json ) {
+      let newclient = json;
+      $('#alertSuccess').fadeIn();
+      $('#alertSuccessClientname').text(newclient.firstname);
+      emptySignupFields();
+    })
+    // Code to run if the request fails; the raw request and
+    // status codes are passed to the function
+    .fail(function( xhr, status, errorThrown ) {
+      console.log( "Sorry, there was a problem!" );
+      console.log( "Error: " + errorThrown );
+      console.log( "Status: " + status );
+      console.dir( xhr );
+    })
+    // Code to run regardless of success or failure;
+    .always(function( xhr, status ) {
+      console.log( "The request is complete!" );
+    });
+  });
+
+  function emptySignupFields() {
+    $('#lastname').val("");
+    $('#firstname').val("");
+    $('#mypassword').val("");
+    $('#birthdayMon').val("");
+    $('#birthdayDate').val("");
+    $('#email').val("");
+    $('#phone').val("");
+  }
+
+
+</script>
 </body>
 </html>
