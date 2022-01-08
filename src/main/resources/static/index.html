@@ -508,94 +508,6 @@
     </div>
 
 </div>
-<style>
-    :root {
-        --color-gold: #EACB53;
-    }
-
-    * {
-        font-family: 'Fjalla One';
-    }
-
-    body {
-        background-color:#8D8B86;
-    }
-
-    #app {
-        display: flex;
-        align-items: space;
-        justify-content: center;
-        //position: absolute;
-        top: 100%;
-        transform: translate3d(50%, 0%, 0);
-        width: 680px;
-        height: 100%;
-    }
-
-    svg {
-        //position: absolute;
-        height: 100%;
-        width: 100%;
-        flex: 3;
-    }
-
-    path {
-        stroke: white;
-        fill: transparent;
-        transition: 0.5s;
-        cursor: pointer;
-    }
-
-    path:hover {
-        fill: var(--color-gold);
-        transform: translate(-5px, -5px);
-    }
-
-    .title_area {
-        flex: 2;
-        margin-right: 7vw;
-        margin-top: 10vh;
-        color: white;
-        font-size: 20px;
-    }
-
-    h1 {
-        font-size: min(10vw, 2em);
-    }
-
-    h1 span {
-        color: var(--color-gold);
-        padding-left: 10px;
-    }
-
-    hr {
-        width: 100px;
-        margin-left: 0;
-        border: none;
-        border-bottom: solid 2px white;
-    }
-
-    .forcast h2,
-    .forcast h4,
-    .forcast h5 {
-        margin: 0;
-    }
-
-    .forcast h2 {
-        margin-top: 20px;
-        font-size:12px;
-    }
-   }
-    .carousel .carousel-item {
-  height: 300px;
-}
-
-.carousel .carousel-item img {
-  min-height: 100px;
-  max-height: 200px;
-  object-fit: cover;
-}
-</style>
 
 
 
@@ -970,7 +882,7 @@ $('.carousel').carousel({
         html += '<div class="card-body">';
         html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
         html += '<p class="card-text">' +restaurant.restaurantIntroduce + '</p>';
-        html += '<a href="staff.html" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
+        html += '<a href="restaurant_info.html" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
         html += '</div>';
         html += '</div>';
         $('#restaurantList').append(html);
