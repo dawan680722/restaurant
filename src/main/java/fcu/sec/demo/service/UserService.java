@@ -3,12 +3,14 @@ package fcu.sec.demo.service;
 import fcu.sec.demo.database.Sql2oDbHandler;
 import fcu.sec.demo.model.Restaurant;
 import fcu.sec.demo.model.User;
+import java.math.BigInteger;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sql2o.Connection;
 
-import java.math.BigInteger;
-import java.util.List;
+
+
 
 /**
  * The service used to access the data related to client.
@@ -22,7 +24,7 @@ public class UserService {
   /**
    * Register a client.
    *
-   * @param newClient input client
+   * @param newUser input client
    * @return client with given id
    */
   public User loginUser(User newUser) {

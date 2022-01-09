@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sql2o.Connection;
 
-import java.math.BigInteger;
-import java.util.List;
 
 /**
  * The service used to access the data related to client.
@@ -26,9 +24,12 @@ public class ClientService {
    */
   public Client registerClient(Client newClient) {
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "INSERT INTO restaurant.registerdata (lastname,firstname, email,mypassword,birthdayMon,birthdayDate,phone) "
-          + "VALUES (:lastname,:firstname,:email,:mypassword,:birthdayMon,:birthdayDate,:phone)";
-     connection.createQuery(query)
+      String query = "INSERT INTO restaurant.registerdata (lastname,firstname"
+          +
+          ", email,mypassword,birthdayMon,birthdayDate,phone) "
+          +
+          "VALUES (:lastname,:firstname,:email,:mypassword,:birthdayMon,:birthdayDate,:phone)";
+      connection.createQuery(query)
           .addParameter("firstname", newClient.getFirstname())
           .addParameter("lastname", newClient.getLastname())
           .addParameter("mypassword", newClient.getMypassword())

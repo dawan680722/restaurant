@@ -1,121 +1,136 @@
 package fcu.sec.demo.model;
 
+/**Restaurant.
+ *
+ */
 public class Restaurant {
-    private String area;
+  private String area;
 
-    private String country;
+  private String country;
 
-    private String restaurantName;
+  private String restaurantName;
 
-    private String restaurantIntroduce;
+  private String restaurantIntroduce;
 
-    private String address;
+  private String address;
 
-    private String phone;
+  private String phone;
 
-    private String openTime;
+  private String openTime;
 
-    private String vegetarian;
+  private String vegetarian;
 
-    private String priceRange;
+  private String priceRange;
 
-    private String dietType;
+  private String dietType;
 
-    private String picture;
+  private String picture;
 
-    public Restaurant() {
-    }
+  public Restaurant() {
 
-    public Restaurant(String area, String country, String restaurantName, String restaurantIntroduce, String address, String phone, String openTime, String vegetarian, String priceRange, String dietType, String picture) {
-        this.area = area;
-        this.country = country;
-        this.restaurantName = restaurantName;
-        this.restaurantIntroduce = restaurantIntroduce;
-        this.address = address;
-        this.phone = phone;
-        this.openTime = openTime;
-        this.vegetarian = vegetarian;
-        this.priceRange = priceRange;
-        this.dietType = dietType;
-        this.picture= picture;
-    }
-    public void setArea(String area) {
-        this.area = area; }
+  }
 
-    public String getArea() {
-        return area;
-    }
+  /**Order.
+  *
+  */
+  public Restaurant(String area, String country,
+                      String restaurantName, String restaurantIntroduce,
+                      String address, String phone, String openTime,
+                      String vegetarian, String priceRange, String dietType, String picture) {
+    this.area = area;
+    this.country = country;
+    this.restaurantName = restaurantName;
+    this.restaurantIntroduce = restaurantIntroduce;
+    this.address = address;
+    this.phone = phone;
+    this.openTime = openTime;
+    this.vegetarian = vegetarian;
+    this.priceRange = priceRange;
+    this.dietType = dietType;
+    this.picture = picture;
+  }
 
-    public void setCountry(String country) {
-        this.country = country; }
+  public void setArea(String area) {
+    this.area = area;
+  }
 
-    public String getCountry() {
-        return country;
-    }
+  public String getArea() {
+    return area;
+  }
 
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
+  public void setCountry(String country) {
+    this.country = country;
+  }
 
-    public String getRestaurantName() { return restaurantName;}
+  public String getCountry() {
+    return country;
+  }
 
-    public void setRestaurantIntroduce(String restaurantIntroduce) {
-        this.restaurantIntroduce = restaurantIntroduce;
-    }
+  public void setRestaurantName(String restaurantName) {
+    this.restaurantName = restaurantName;
+  }
 
-    public String getRestaurantIntroduce() {
-        return restaurantIntroduce;
-    }
+  public String getRestaurantName() {
+    return restaurantName;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public void setRestaurantIntroduce(String restaurantIntroduce) {
+    this.restaurantIntroduce = restaurantIntroduce;
+  }
 
-    public String getPhone() {
-        return phone;
-    }
+  public String getRestaurantIntroduce() {
+    return restaurantIntroduce;
+  }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+  public void setAddress(String address) {
+    this.address = address;
+  }
 
-    public String getOpenTime() {
-        return openTime;
-    }
+  public String getPhone() {
+    return phone;
+  }
 
-    public void setOpenTime(String openTime) {
-        this.openTime = openTime;
-    }
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
 
-    public String getVegetariane() {
-        return vegetarian;
-    }
+  public String getOpenTime() {
+    return openTime;
+  }
 
-    public void setVegetarian(String vegetarian) {
-        this.vegetarian = vegetarian;
-    }
+  public void setOpenTime(String openTime) {
+    this.openTime = openTime;
+  }
 
-    public String getPriceRange() {
-        return priceRange;
-    }
+  public String getVegetariane() {
+    return vegetarian;
+  }
 
-    public void setPriceRange(String priceRange) {
-        this.priceRange = priceRange;
-    }
+  public void setVegetarian(String vegetarian) {
+    this.vegetarian = vegetarian;
+  }
 
-    public String getDietType() {
-        return dietType;
-    }
+  public String getPriceRange() {
+    return priceRange;
+  }
 
-    public void setDietType(String dietType) {
-        this.dietType = dietType;
-    }
+  public void setPriceRange(String priceRange) {
+    this.priceRange = priceRange;
+  }
 
-    public String getPicture() {
-        return picture;
-    }
+  public String getDietType() {
+    return dietType;
+  }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
+  public void setDietType(String dietType) {
+    this.dietType = dietType;
+  }
+
+  public String getPicture() {
+    return picture;
+  }
+
+  public void setPicture(String picture) {
+    this.picture = picture;
+  }
 }

@@ -1,5 +1,8 @@
 package fcu.sec.demo.model;
 
+/**Order.
+ *
+ */
 public class Order {
   private String orderName;
 
@@ -16,7 +19,12 @@ public class Order {
   public Order() {
   }
 
-  public Order(String orderName, String restaurantName, String people, String orderDate, String orderTime, String phone) {
+  /**Order.
+   *
+   */
+  public Order(String orderName, String restaurantName,
+               String people, String orderDate,
+               String orderTime, String phone) {
     this.orderName = orderName;
     this.restaurantName = restaurantName;
     this.people = people;
@@ -24,8 +32,10 @@ public class Order {
     this.orderTime = orderTime;
     this.phone = phone;
   }
+
   public void setorderName(String orderName) {
-    this.orderName = orderName; }
+    this.orderName = orderName;
+  }
 
   public String getorderName() {
     return orderName;
@@ -63,9 +73,11 @@ public class Order {
   public String getorderTime() {
     return orderTime;
   }
+
   public void setphone(String phone) {
     this.phone = phone;
   }
+
   public String getphone() {
     return phone;
   }
