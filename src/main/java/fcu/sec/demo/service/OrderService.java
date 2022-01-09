@@ -32,7 +32,7 @@ public class OrderService {
           + " from ordercsv where phone like : phonenum";
 
       return connection.createQuery(query)
-          .addParameter("phonenum",Integer.parseInt(phonenum))
+          .addParameter("phonenum","%"+phonenum+"%")
           .executeAndFetch(Order.class);
     }
   }
