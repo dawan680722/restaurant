@@ -14,11 +14,7 @@ public class User {
 
   /**Product.
    *
-   * @param id .
-   * @param name .
-   * @param imageUrl .
-   * @param price .
-   * @param description .
+   * @param ID .
    */
   public User(String ID, String password) {
     this.ID = ID;
