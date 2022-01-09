@@ -80,11 +80,28 @@
 
     <h1 class="mt-3" style=color:#FFDF9E>訂位紀錄查詢</h1>
 
-    <div class="input-group mb-3 mt-5">
-        <input type="text" class="form-control" placeholder="輸入訂位人電話號碼(+886)" aria-label="order name" aria-describedby="searchOrder" id="orderKeyword">
-        <button style=color:white class="btn btn-outline-secondary" type="button" id="searchOrder">紀錄查詢</button>
-    </div>
-    <div class="mt-3 row" id="orderList">
+    <div class="card bg-light col-4 ">
+        <div class="card-body">
+            <h5 class="card-title">張約翰</h5>
+            <h5 class="card-text">藝壽司</h5>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">訂位日期</th>
+                <th scope="col">訂位時間</th>
+                <th scope="col">訂位電話</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>9月22日</td>
+                <td>12:00</td>
+                <td>886911222333</td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
 
     <footer class="text-center text-white fixed-bottom" style="background-color: #DA9C8B;">
@@ -263,9 +280,8 @@
     $( '#searchOrder' ).click(function() {
     const keyword = $('#orderKeyword').val();
         if(keyword.trim() === '886975000000'){
-         location.href = 'http://localhost:8080/order1.html';
-        }else if(keyword.trim() === '886911222333'){
-            location.href = 'http://localhost:8080/order2.html';
+         location.href = 'http://localhost:8080/adminPage.html';
+        }else if(keyword.trim() === '886932123456'){
         }else{
           emptyOrders();
           getOrders('orders/'+keyword);//網址+keyword
