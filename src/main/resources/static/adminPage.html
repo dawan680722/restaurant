@@ -222,45 +222,9 @@ h3{
     console.log( "ready!" );
   });
 
-
-  $('#add_button').click(function() {
-    const area = $('#inputRestaurantArea').val();
-    const country = $('#inputCountry').val();
-    const restaurantName = $('#inputRestaurantname').val();
-    const restaurantIntroduce = $('#intro').val();
-    const address = $('#address').val();
-    const phone = $('#phone').val();
-    const openTime = $('#time').val();
-    const vegetarian = $('#Ven').val();
-    const priceRange = $('#inputPrice').val();
-    const dietType = $('#inputType').val();
-    const picture = $('#inputPicture').val();
-    $.ajax({
-      type: "POST",
-      contentType:"application/json; charset=utf-8",
-      url: "restaurantAdd",
-      data: '{"area":"' + area + '", "country":"' + country + '", " restaurantName":"' +  restaurantName + '","restaurantIntroduce":"' + restaurantIntroduce + '","address":"' + address + '", "phone":"' + phone + '", "openTime ":"' + openTime  + '", "vegetarian ":"' + vegetarian  + '", "priceRange ":"' + priceRange  + '", "dietType ":"' + dietType  + '", "picture ":"' + picture + '"}',
-      dataType : "json"
-    }).done(function( json ) {
-      let newrestaurant = json;
-      $('#alertSuccess').fadeIn();
-      $('#alertSuccessClientname').text(newrestaurant.restaurantName);
-      emptySignupFields();
-    })
-    // Code to run if the request fails; the raw request and
-    // status codes are passed to the function
-    .fail(function( xhr, status, errorThrown ) {
-      alert("fail 87");
-      console.log( "Sorry, there was a problem!" );
-      console.log( "Error: " + errorThrown );
-      console.log( "Status: " + status );
-      console.dir( xhr );
-    })
-    // Code to run regardless of success or failure;
-    .always(function( xhr, status ) {
-      console.log( "The request is complete!" );
+    $('#add_button').click( function(){
+        add_restaurant();
     });
-  });
 
   function emptySignupFields() {
     $('#inputRestaurantArea').val("");
@@ -274,8 +238,50 @@ h3{
     $('#inputPrice').val("");
     $('#inputType').val("");
     $('#inputPicture').val("");
-
   }
+     function add_restaurant()
+    {
+        $.ajax({
+            // The URL for the request
+            url: "restaurantAdd" ,
+
+            data: {
+             area : $('#inputRestaurantArea').val(),
+              country : $('#inputCountry').val(),
+              restaurantName : $('#inputRestaurantname').val(),
+              restaurantIntroduce : $('#intro').val(),
+              address : $('#address').val(),
+              phone : $('#phone').val(),
+              openTime : $('#time').val(),
+              vegetarian : $('#Ven').val(),
+              priceRange : $('#inputPrice').val(),
+              dietType : $('#inputType').val(),
+              picture : $('#inputPicture').val()
+
+            },
+
+            // Whether this is a POST or GET request
+            type: "GET",
+
+            // The type of data we expect back
+            dataType : "text",
+        })
+        .done(function( text ) {
+            if(text == "Success")
+                alert("success");
+            else
+                alert("fail");
+        })
+        .fail( function(xhr, status, errorThrown) {
+            console.log( "Sorry, there was a problem!" );
+            console.log( "Error: " + errorThrown );
+            console.log( "Status: " + status );
+            console.dir( xhr );
+        })
+    }
+
+
+
 
 
 </script>

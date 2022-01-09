@@ -3,11 +3,7 @@ package fcu.sec.demo.controller;
 import fcu.sec.demo.model.Restaurant;
 import fcu.sec.demo.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -22,7 +18,7 @@ public class RestaurantController {
   @Autowired
   RestaurantService restaurantManager;
   RestaurantService OrdertManager;
-  private RestaurantService restaurantService;
+
 
   @GetMapping("/restaurants")
   public List<Restaurant> getRestaurants(){
@@ -60,17 +56,30 @@ public class RestaurantController {
   public List<Restaurant> getOrders(@PathVariable("keyword")String keyword){
     return OrdertManager.getOrders(keyword);
   }
+
   /**
    * Register a restaurant.
    *
-   * @param newRestaurant input restaurant
+   * @param area input restaurant
    * @return user object with given id
    */
-  @PostMapping("/restaurantAdd")
-  public Restaurant restaurantAdd(@RequestBody Restaurant newRestaurant) {
-    System.out.println(newRestaurant.getRestaurantName());
-    newRestaurant= restaurantService.restaurantadd(newRestaurant);
-    return newRestaurant;
+  @RequestMapping(value = "/restaurantAdd",method = RequestMethod.GET)
+  @ResponseBody
+  public String restaurantAdd(
+      @RequestParam("area")String area,
+      @RequestParam("country")String country,
+      @RequestParam("restaurantName")String restaurantName,
+      @RequestParam("restaurantIntroduce")String restaurantIntroduce,
+      @RequestParam("address")String address,
+      @RequestParam("phone")String phone,
+      @RequestParam("openTime")String openTime,
+      @RequestParam("vegetarian")String vegetarian,
+      @RequestParam("priceRange ")String priceRange,
+      @RequestParam("dietType")String dietType,
+      @RequestParam("picture")String picture
+  )
+  {
+    return restaurantManager.restaurantAdd(area,country,restaurantName,restaurantIntroduce,address,phone,openTime,vegetarian,priceRange,dietType,picture);
   }
 
 }

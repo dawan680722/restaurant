@@ -16,27 +16,28 @@ public class RestaurantService {
   /**
    * restarurantadd a restaurant.
    *
-   * @param newRestaurant input restaurant
+   * @param area input restaurant
    * @return client with given id
    */
-  public Restaurant restaurantadd(Restaurant newRestaurant) {
+  public String restaurantAdd(String area,String country,String restaurantName,String restaurantIntroduce,String address,String phone,String openTime,String vegetarian,String priceRange,String dietType,String picture)
+  {
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "INSERT INTO restaurant.restaurantcsv (area,country,restaurantName,restaurantIntroduce,address,phone,openTime,vegetarian,priceRange,dietType,picture)"
+      String query = "INSERT INTO restaurant.restaurantcsv(area,country,restaurantName,restaurantIntroduce,address,phone,openTime,vegetarian,priceRange,dietType,picture)"
           + "VALUES (:area,:country,:restaurantName,:restaurantIntroduce,:address,:phone,:openTime,:vegetarian,:priceRange,:dietType,:picture)";
       connection.createQuery(query)
-          .addParameter("area", newRestaurant.getArea())
-          .addParameter("country", newRestaurant.getCountry())
-          .addParameter("restaurantName", newRestaurant.getRestaurantName())
-          .addParameter("restaurantIntroduce", newRestaurant.getRestaurantIntroduce())
-          .addParameter("address", newRestaurant.getAddress())
-          .addParameter("phone",newRestaurant.getPhone())
-          .addParameter("openTime", newRestaurant.getOpenTime())
-          .addParameter("vegetarian", newRestaurant.getVegetariane())
-          .addParameter("priceRange", newRestaurant.getPriceRange())
-          .addParameter("dietType", newRestaurant.getDietType())
-          .addParameter("picture", newRestaurant.getPicture())
+          .addParameter("area", area)
+          .addParameter("country", country)
+          .addParameter("restaurantName", restaurantName)
+          .addParameter("restaurantIntroduce", restaurantIntroduce)
+          .addParameter("address", address)
+          .addParameter("phone",phone)
+          .addParameter("openTime", openTime)
+          .addParameter("vegetarian", vegetarian)
+          .addParameter("priceRange", priceRange)
+          .addParameter("dietType", dietType)
+          .addParameter("picture", picture)
           .executeUpdate();
-      return newRestaurant;
+      return "Success";
     }
   }
 
