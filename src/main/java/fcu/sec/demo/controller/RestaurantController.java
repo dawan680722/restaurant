@@ -52,8 +52,5 @@ public class RestaurantController {
   public List<Restaurant> getRestaurantprice4(@PathVariable("prices")String prices){
     return restaurantManager.getRestaurantprice4(prices);
   }
-  @GetMapping("/Orders/{keyword}")
-  public List<Restaurant> getOrders(@PathVariable("keyword")String keyword){
-    return OrdertManager.getOrders(keyword);
-  }
+
 }

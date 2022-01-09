@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>奶油龍蝦腳加水餃</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="7808.png_300.png"width="30" height="30" class="d-inline-block align-top" alt=""> 奶油龍蝦腳加水餃</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">首頁</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        地區
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#" id="north">北部</a></li>
+                        <li><a class="dropdown-item" href="#" id="middle">中部</a></li>
+                        <li><a class="dropdown-item" href="#" id="south">南部</a></li>
+                        <li><a class="dropdown-item" href="#" id="east">東部</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        類別
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#" id="chinese">中式</a></li>
+                        <li><a class="dropdown-item" href="#" id="japanese">日式</a></li>
+                        <li><a class="dropdown-item" href="#" id="aria">東南亞</a></li>
+                        <li><a class="dropdown-item" href="#" id="western">西式</a></li>
+                        <li><a class="dropdown-item" href="#" id="italian">義式</a></li>
+                        <li><a class="dropdown-item" href="#" id="french">法式</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        價位
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#" id="price1">1-200</a></li>
+                        <li><a class="dropdown-item" href="#" id="price2">200-600</a></li>
+                        <li><a class="dropdown-item" href="#" id="price3">600-1000</a></li>
+                        <li><a class="dropdown-item" href="#" id="price4">1000以上</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--<form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>-->
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1 class="mt-3" style=color:#FFDF9E>訂位紀錄查詢</h1>
+
+    <div class="input-group mb-3 mt-5">
+        <input type="text" class="form-control" placeholder="輸入訂位人電話號碼(+886)" aria-label="Order name" aria-describedby="customerOrder" id="OrderKeyword">
+        <button style=color:white class="btn btn-outline-secondary" type="button" id="customerOrder">紀錄查詢</button>
+    </div>
+
+    <div class="mt-3 row" id="OrderList">
+    </div>
+
+    <footer class="text-center text-white fixed-bottom" style="background-color: #DA9C8B;">
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright © 2022 All Rights Reserved:
+            <a class="text-white" href="index.html">奶油龍蝦腳加水餃.com</a>
+        </div>
+    </footer>
+</div>
+
+</div>
+<style>
+    :root {
+        --color-gold: #EACB53;
+    }
+
+    * {
+        font-family: 'Fjalla One';
+    }
+
+    body {
+        background-color:#8D8B86;
+    }
+
+    #app {
+        display: flex;
+        align-items: space;
+        justify-content: center;
+        //position: absolute;
+        top: 100%;
+        transform: translate3d(50%, 0%, 0);
+        width: 680px;
+        height: 100%;
+    }
+
+    svg {
+        //position: absolute;
+        height: 100%;
+        width: 100%;
+        flex: 3;
+    }
+
+    path {
+        stroke: white;
+        fill: transparent;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    path:hover {
+        fill: var(--color-gold);
+        transform: translate(-5px, -5px);
+    }
+
+    .title_area {
+        flex: 2;
+        margin-right: 7vw;
+        margin-top: 10vh;
+        color: white;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: min(10vw, 2em);
+    }
+
+    h1 span {
+        color: var(--color-gold);
+        padding-left: 10px;
+    }
+
+    hr {
+        width: 100px;
+        margin-left: 0;
+        border: none;
+        border-bottom: solid 2px white;
+    }
+
+    .forcast h2,
+    .forcast h4,
+    .forcast h5 {
+        margin: 0;
+    }
+
+    .forcast h2 {
+        margin-top: 20px;
+        font-size:12px;
+    }
+   }
+    .carousel .carousel-item {
+  height: 300px;
+}
+
+.carousel .carousel-item img {
+  min-height: 100px;
+  max-height: 200px;
+  object-fit: cover;
+}
+</style>
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+<script>
+    var paths;
+    $(document).off('.data-api')
+    const app = new Vue({
+        el: '#app',
+        mounted() {
+            axios.get(url).then(data => {
+                console.log(data)
+                this.weather_data = data.data.cwbopendata.dataset.locations.location
+            })
+
+            paths = document.querySelectorAll('path');
+            let _this = this
+            paths.forEach(e => {
+                e.onmouseover = function () {
+                    _this.filter = this.dataset.nameZh
+                }
+            })
+        },
+        data: () => {
+            return {
+                filter: '',
+                place_data: null,
+                weather_data: []
+            }
+        },
+        computed: {
+            now_area() {
+                let data = {}
+                let result = this.weather_data.find((obj) => {
+                    return obj.locationName === this.filter
+                })
+
+                if (result) {
+                    let high = result.weatherElement.find(el => el.elementName === 'MaxT').time[0].elementValue.value
+                    let low = result.weatherElement.find(el => el.elementName === 'MinT').time[0].elementValue.value
+                    let weather = result.weatherElement.find(el => el.elementName === 'Wx').time[0].elementValue[0].value
+                    let restaurant =
+                    data = {
+                        place: this.filter,
+                        low: low,
+                        high: high,
+                        weather: weather
+                    }
+                }
+                return data
+            }
+        },
+    })
+
+
+   function addRestaurants(restaurants){
+    for ( let restaurant of restaurants ) {
+        let html = '<div class="card bg-light col-4 ">';
+        html += '<img src="' + restaurant.picture + '" class="card-img-top img-thumbnail rounded"' + '" style="height: 250px;" alt="' + restaurant.restaurantName + '">';
+        //html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '<div class="card-body">';
+        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
+        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
+       // html += '<a href="#" class="btn btn-outline-primary">' + restaurant.priceRange + '</a>';
+        html += '<a href="restaurant_info" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
+        html += '</div>';
+        html += '</div>';
+        $('#restaurantList').append(html);
+      }
+    }
+   function addRestaurants(restaurants){
+    for ( let restaurant of restaurants ) {
+        let html = '<div class="card bg-light col-4 ">';
+        html += '<img src="' + restaurant.picture + '" class="card-img-top img-thumbnail rounded"' + '" style="height: 250px;" alt="' + restaurant.restaurantName + '">';
+        //html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '<div class="card-body">';
+        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
+        html += '<p class="card-text">' + restaurant.restaurantIntroduce + '</p>';
+       // html += '<a href="#" class="btn btn-outline-primary">' + restaurant.priceRange + '</a>';
+        html += '<a href="restaurant_info" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
+        html += '</div>';
+        html += '</div>';
+        $('#List').append(html);
+      }
+    }
+
+  $( document ).ready( function() {
+    console.log( "ready!" );
+    emptyRestaurants();
+    getRestaurants('restaurants')
+  });
+
+    $( '#searchRestaurant' ).click(function() {
+    const keyword = $('#restaurantKeyword').val();
+        if(keyword.trim() === ''){
+         emptyRestaurants();
+         getRestaurants('restauants');
+        }else{
+          emptyRestaurants();
+          getRestaurants('restaurants/'+keyword);//網址+keyword
+        }
+    });
+
+    $( '#customerOrder' ).click(function() {
+    const keyword = $('#OrderKeyword').val();
+        if(keyword.trim() === ''){
+         emptyOrders();
+         getOrders('Orders');
+        }else{
+          emptyOrders();
+          getOrders('Orders/'+keyword);//網址+keyword
+        }
+    });
+
+
+    $( '#north' ).click(function() {
+    const areas = '北部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#middle' ).click(function() {
+    const areas = '中部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#south' ).click(function() {
+    const areas = '南部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+    $( '#east' ).click(function() {
+    const areas = '東部';
+          emptyRestaurants();
+          getRestaurants('restaurants/area/'+areas);//網址+keyword
+    });
+
+    $( '#chinese' ).click(function() {
+    const sorts = '中式';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+
+    $( '#japanese' ).click(function() {
+    const sorts = '日式';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+    $( '#italian' ).click(function() {
+    const sorts = '義式';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+    $( '#french' ).click(function() {
+    const sorts = '法式';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+    $( '#western' ).click(function() {
+    const sorts = '西式';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+    $( '#aria' ).click(function() {
+    const sorts = '東南亞';
+          emptyRestaurants();
+          getRestaurants('restaurants/sort/a/'+sorts);//網址+keyword
+    });
+    $( '#price1' ).click(function() {
+    const prices = '200';
+          emptyRestaurants();
+          getRestaurants('restaurants/price/1/'+prices);//網址+keyword
+    });
+    $( '#price2' ).click(function() {
+    const prices = '600';
+          emptyRestaurants();
+          getRestaurants('restaurants/price/2/'+prices);//網址+keyword
+    });
+    $( '#price3' ).click(function() {
+    const prices = '1000';
+          emptyRestaurants();
+          getRestaurants('restaurants/price/3/'+prices);//網址+keyword
+    });
+    $( '#price4' ).click(function() {
+    const prices = '10000';
+          emptyRestaurants();
+          getRestaurants('restaurants/price/4/'+prices);//網址+keyword
+    });
+    function emptyRestaurants(){
+     $('#restaurantList').empty();
+    }
+
+   function addRestaurants(restaurants){
+    for ( let restaurant of restaurants ) {
+        let html = '<div class="card bg-primary col-4 ">';
+        html += '<img src="' + restaurant.picture + '" class="card-img-top img-thumbnail rounded"' + '" style="height: 250px;" alt="' + restaurant.restaurantName + '">';
+        //html += '<img src="' + restaurant.picture + '" class="card-img-top" alt="' + restaurant.restaurantName + '">';
+        html += '<div class="card-body">';
+        html += '<h5 class="card-title">' + restaurant.restaurantName + '</h5>';
+        html += '<p class="card-text">' +restaurant.restaurantIntroduce + '</p>';
+        html += '<a href="restaurant_info" style="background-color:#DA9C8B;border:1px #DA9C8B solid ;" class="btn btn-primary">' + "更多資訊" + '</a>';
+        html += '</div>';
+        html += '</div>';
+        $('#restaurantList').append(html);
+      }
+   }
+
+  function getRestaurants(targetUrl){
+     // Using the core $.ajax() method
+      $.ajax({
+          // The URL for the request
+          url: targetUrl,
+
+          // Whether this is a POST or GET request
+          type: "GET",
+
+          // The type of data we expect back
+          dataType : "json",
+      })
+        // Code to run if the request succeeds (is done);
+        // The response is passed to the function
+        .done(function( json ) {
+          let restaurants = json;
+          addRestaurants(restaurants);
+        })
+        // Code to run if the request fails; the raw request and
+        // status codes are passed to the function
+        .fail(function( xhr, status, errorThrown ) {
+          alert( "Sorry, there was a problem!" );
+          console.log( "Error: " + errorThrown );
+          console.log( "Status: " + status );
+          console.dir( xhr );
+        })
+        // Code to run regardless of success or failure;
+        .always(function( xhr, status ) {
+          //alert( "The request is complete!" );
+          console.log( "The request is complete!" );
+        });
+  }
+
+    function getOrders(targetUrl){
+     // Using the core $.ajax() method
+      $.ajax({
+          // The URL for the request
+          url: targetUrl,
+
+          // Whether this is a POST or GET request
+          type: "GET",
+
+          // The type of data we expect back
+          dataType : "json",
+      })
+        // Code to run if the request succeeds (is done);
+        // The response is passed to the function
+        .done(function( json ) {
+          let orders = json;
+          addOrders(orders);
+        })
+        // Code to run if the request fails; the raw request and
+        // status codes are passed to the function
+        .fail(function( xhr, status, errorThrown ) {
+          alert( "Sorry, there was a problem!" );
+          console.log( "Error: " + errorThrown );
+          console.log( "Status: " + status );
+          console.dir( xhr );
+        })
+        // Code to run regardless of success or failure;
+        .always(function( xhr, status ) {
+          //alert( "The request is complete!" );
+          console.log( "The request is complete!" );
+        });
+  }
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>
+<style>
+
+    .card-text{
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color:#938976;
+        white-space: normal;
+    }
+
+        .bg-primary{
+
+         background-color: rgba(235, 233, 229,1)!important;
+        opacity: 1;
+        }
+
+       .btn-primary:hover, .btn-primary:focus, .btn-primary:active:hover{
+      color: #white;
+      background-color: brown;
+      border-color: brown;
+}
+
+
+
+
+
+
+
+
+</style>
+</body>
+</html>
