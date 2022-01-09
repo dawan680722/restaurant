@@ -18,6 +18,7 @@ public class RestaurantController {
 
   @Autowired
   RestaurantService restaurantManager;
+  RestaurantService OrdertManager;
 
   @GetMapping("/restaurants")
   public List<Restaurant> getRestaurants(){
@@ -51,5 +52,8 @@ public class RestaurantController {
   public List<Restaurant> getRestaurantprice4(@PathVariable("prices")String prices){
     return restaurantManager.getRestaurantprice4(prices);
   }
-
+  @GetMapping("/Orders/{keyword}")
+  public List<Restaurant> getOrders(@PathVariable("keyword")String keyword){
+    return OrdertManager.getOrders(keyword);
+  }
 }
