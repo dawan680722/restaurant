@@ -99,13 +99,13 @@ public class RestaurantService {
     }
   }
 
-  public List<Restaurant> getRestaurantinfo(String info){
+  public List<Restaurant> getOrders(String keyword){
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "select area area, restaurantName restaurantName, picture picture, priceRange priceRange, restaurantIntroduce restaurantIntroduce, dietType dietType"
-          + " from restaurantcsv where restaurantName like : ";
+      String query = "select orderName orderName, restaurantName restaurantName, people people, orderDate orderDate, orderTime orderTime, phone phone"
+          + " from ordercsv where phone like : keyword";
 
       return connection.createQuery(query)
-          .addParameter("info",Integer.parseInt(info))
+          .addParameter("keyword",Integer.parseInt(keyword))
           .executeAndFetch(Restaurant.class);
     }
   }
