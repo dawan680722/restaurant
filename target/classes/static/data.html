@@ -67,26 +67,41 @@
                     <p class="card-text text-muted">電話:0900111222</p>
                 </div>
                 <div class="card-footer text-muted">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn  bg-danger text-white bg-opacity-75" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        取消訂位
-                    </button>
-
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title " id="exampleModalLabel">取消訂位</h5>
+                                    <h5 class="modal-title" id="exampleModalToggleLabel">取消訂位</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">否</button>
-                                    <button type="button" class="btn btn-primary">是</button>
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">是</button>
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">否</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    訂位已取消
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    取消失敗
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn  bg-danger text-white bg-opacity-75" data-bs-toggle="modal" href="#exampleModalToggle" role="button">取消訂位</a>
+
                 </div>
             </div>
         </div>
