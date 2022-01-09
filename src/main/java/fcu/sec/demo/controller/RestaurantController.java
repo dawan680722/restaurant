@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 import java.util.List;
 
@@ -19,6 +22,7 @@ public class RestaurantController {
   @Autowired
   RestaurantService restaurantManager;
   RestaurantService OrdertManager;
+  private RestaurantService restaurantService;
 
   @GetMapping("/restaurants")
   public List<Restaurant> getRestaurants(){
@@ -56,4 +60,17 @@ public class RestaurantController {
   public List<Restaurant> getOrders(@PathVariable("keyword")String keyword){
     return OrdertManager.getOrders(keyword);
   }
+  /**
+   * Register a restaurant.
+   *
+   * @param newRestaurant input restaurant
+   * @return user object with given id
+   */
+  @PostMapping("/restaurantAdd")
+  public Restaurant restaurantAdd(@RequestBody Restaurant newRestaurant) {
+    System.out.println(newRestaurant.getRestaurantName());
+    newRestaurant= restaurantService.restaurantadd(newRestaurant);
+    return newRestaurant;
+  }
+
 }
