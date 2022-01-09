@@ -634,7 +634,9 @@
 
  $( '#sure' ).click(function() {
      var phone = document.getElementById('customer_phone').value;
-     console.log(phone);
+     localStorage.setItem(key,JSON.stringify(phone))
+     var key;
+        sessionStorage.setItem(key, phone)
 });
 
 
