@@ -13,6 +13,8 @@ public class Data {
 
     private String phone;
 
+    public Data() {
+    }
 
     public Data(String orderName, String restaurantName, String people, String orderData, String orderTime, String phone, String openTime, String vegetarian, String priceRange, String dietType, String picture) {
         this.orderName = orderName;
