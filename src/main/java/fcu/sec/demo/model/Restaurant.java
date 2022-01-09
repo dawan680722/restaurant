@@ -58,6 +58,12 @@ public class Restaurant {
     return area;
   }
 
+
+  public String getAddress() {
+    return address;
+  }
+
+
   public void setCountry(String country) {
     this.country = country;
   }

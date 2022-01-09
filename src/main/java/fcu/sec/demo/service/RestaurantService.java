@@ -15,10 +15,34 @@ public class RestaurantService {
 
   @Autowired
   private Sql2oDbHandler sql2oDbHandler;
-
-  public RestaurantService() {
-
+  /**
+   * restarurantadd a restaurant.
+   *
+   * @param area input restaurant
+   * @return client with given id
+   */
+  public String restaurantAdd(String area,String country,String restaurantName,String restaurantIntroduce,String address,String phone,String openTime,String vegetarian,String priceRange,String dietType,String picture)
+  {
+    try (Connection connection = sql2oDbHandler.getConnector().open()) {
+      String query = "INSERT INTO restaurant.restaurantcsv(area,country,restaurantName,restaurantIntroduce,address,phone,openTime,vegetarian,priceRange,dietType,picture)"
+          + "VALUES (:area,:country,:restaurantName,:restaurantIntroduce,:address,:phone,:openTime,:vegetarian,:priceRange,:dietType,:picture)";
+      connection.createQuery(query)
+          .addParameter("area", area)
+          .addParameter("country", country)
+          .addParameter("restaurantName", restaurantName)
+          .addParameter("restaurantIntroduce", restaurantIntroduce)
+          .addParameter("address", address)
+          .addParameter("phone",phone)
+          .addParameter("openTime", openTime)
+          .addParameter("vegetarian", vegetarian)
+          .addParameter("priceRange", priceRange)
+          .addParameter("dietType", dietType)
+          .addParameter("picture", picture)
+          .executeUpdate();
+      return "Success";
+    }
   }
+
 
   /**
    * The service used to access the data related to client.
