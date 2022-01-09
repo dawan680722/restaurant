@@ -18,7 +18,15 @@ public class OrderService {
 
   }
 
-  public List<Order> getOrders(String phonenum){
+  public List<Order> getOrders(){
+    try (Connection connection = sql2oDbHandler.getConnector().open()) {
+      String query = "select orderName orderName, restaurantName restaurantName, people people, orderDate orderDate, orderTime orderTime, phone phone"
+          + " from ordercsv";
+
+      return connection.createQuery(query).executeAndFetch(Order.class);
+    }
+  }
+  public List<Order> getOrderp(String phonenum){
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
       String query = "select orderName orderName, restaurantName restaurantName, people people, orderDate orderDate, orderTime orderTime, phone phone"
           + " from ordercsv where phone like : phonenum";
@@ -28,5 +36,4 @@ public class OrderService {
           .executeAndFetch(Order.class);
     }
   }
-
 }

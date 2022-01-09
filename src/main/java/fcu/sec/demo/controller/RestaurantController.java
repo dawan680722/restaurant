@@ -18,7 +18,6 @@ public class RestaurantController {
 
   @Autowired
   RestaurantService restaurantManager;
-  RestaurantService OrdertManager;
 
   @GetMapping("/restaurants")
   public List<Restaurant> getRestaurants(){

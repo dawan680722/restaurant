@@ -1,5 +1,4 @@
 package fcu.sec.demo.controller;
-
 import fcu.sec.demo.model.Order;
 import fcu.sec.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +16,15 @@ public class OrderController {
 
 
   @Autowired
-  OrderService OrdertManager;
+  OrderService orderManager;
 
-  @GetMapping("/orders/{keyword}")
-  public List<Order> getOrders(@PathVariable("phonenum")String phonenum){
-    return OrdertManager.getOrders(phonenum);
+  @GetMapping("/orders")
+  public List<Order> getOrders(){
+    return orderManager.getOrders();
+  }
+
+  @GetMapping("/orders/{phonenum}")
+  public List<Order> getOrderp(@PathVariable("phonenum")String phonenum){
+    return orderManager.getOrderp(phonenum);
   }
 }

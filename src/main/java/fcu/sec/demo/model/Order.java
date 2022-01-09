@@ -31,11 +31,11 @@ public class Order {
     return orderName;
   }
 
-  public void setRestaurantName(String restaurantName) {
+  public void setrestaurantName(String restaurantName) {
     this.restaurantName = restaurantName;
   }
 
-  public String getRestaurantName() {
+  public String getrestaurantName() {
     return restaurantName;
   }
 
@@ -51,18 +51,19 @@ public class Order {
     this.orderDate = orderDate;
   }
 
-  public String getorderTime() {
-    return orderTime;
-  }
-
-  public void setOpenTime(String orderTime) {
-    this.orderTime = orderTime;
-  }
   public String getorderDate() {
     return orderDate;
   }
 
-  public void setPhone(String phone) {
+
+  public void setOpenTime(String orderTime) {
+    this.orderTime = orderTime;
+  }
+
+  public String getorderTime() {
+    return orderTime;
+  }
+  public void setphone(String phone) {
     this.phone = phone;
   }
   public String getphone() {
