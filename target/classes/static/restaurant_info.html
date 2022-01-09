@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -492,7 +493,7 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <a class="btn btn-primary" href="success.html" role="button">確認訂位</a>
+                                    <a class="btn btn-primary" href="success.html" role="button" id="sure">確認訂位</a>
                                 </div>
 
                         </form>
@@ -630,6 +631,13 @@
 -->
 
 <script>
+
+ $( '#sure' ).click(function() {
+     var phone = document.getElementById('customer_phone').value;
+     console.log(phone);
+});
+
+
 $('.carousel').carousel({
   interval: 3000
 })
