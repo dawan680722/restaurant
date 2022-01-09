@@ -81,7 +81,7 @@
     <h1 class="mt-3" style=color:#FFDF9E>訂位紀錄查詢</h1>
 
     <div class="input-group mb-3 mt-5">
-        <input type="text" class="form-control" placeholder="輸入訂位人電話號碼(+886)" aria-label="order name" aria-describedby="searchOrder" id="orderPhonenum">
+        <input type="text" class="form-control" placeholder="輸入訂位人電話號碼(+886)" aria-label="order name" aria-describedby="searchOrder" id="orderKeyword">
         <button style=color:white class="btn btn-outline-secondary" type="button" id="searchOrder">紀錄查詢</button>
     </div>
     <div class="mt-3 row" id="orderList">
@@ -254,18 +254,6 @@
         },
     })
 
-    function addOrders(orders){
-    for ( let order of orders ) {
-        let html = '<div class="card bg-light col-4 ">';
-        html += '<div class="card-body">';
-        html += '<h5 class="card-title">' + order.orderName + '</h5>';
-        html += '<h5 class="card-text">' + order.restaurantName + '</h5>';
-        html += '</div>';
-        html += '</div>';
-        $('#orderList').append(html);
-      }
-    }
-
   $( document ).ready( function() {
     console.log( "ready!" );
     emptyOrders();
@@ -273,13 +261,14 @@
   });
 
     $( '#searchOrder' ).click(function() {
-    const phonenum = $('#orderPhonenum').val();
-        if(phonenum.trim() === ''){
-         emptyOrders();
-         getOrders('orders');
+    const keyword = $('#orderKeyword').val();
+        if(keyword.trim() === '886975000000'){
+         location.href = 'http://localhost:8080/order1.html';
+        }else if(keyword.trim() === '886911222333'){
+            location.href = 'http://localhost:8080/order2.html';
         }else{
           emptyOrders();
-          getOrders('orders/'+phonenum);//網址+phonenum
+          getOrders('orders/'+keyword);//網址+keyword
         }
     });
 
@@ -366,8 +355,24 @@
         let html = '<div class="card bg-light col-4 ">';
         html += '<div class="card-body">';
         html += '<h5 class="card-title">' + order.orderName + '</h5>';
-        html += '<p class="card-text">' + order.people + '</p>';
+        html += '<h5 class="card-text">' + order.restaurantName + '</h5>';
         html += '</div>';
+        html += '<table class="table">';
+        html += '<thead>';
+        html += '<tr>';
+        html += '<th scope="col">訂位日期</th>';
+        html += '<th scope="col">訂位時間</th>';
+        html += '<th scope="col">訂位電話</th>';
+        html += '</tr>';
+        html += '</thead>';
+        html += '<tbody>';
+        html += '<tr>';
+        html += '<td>'+ order.orderDate +'</td>';
+        html += '<td>'+ order.orderTime +'</td>';
+        html += '<td>886'+ order.phone +'</td>';
+        html += '</tr>';
+        html += '</tbody>';
+        html += '</table>';
         html += '</div>';
         $('#orderList').append(html);
       }
