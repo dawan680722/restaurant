@@ -26,13 +26,13 @@ public class OrderService {
       return connection.createQuery(query).executeAndFetch(Order.class);
     }
   }
-  public List<Order> getOrderp(String phonenum){
+  public List<Order> getOrderp(String keyword){
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
       String query = "select orderName orderName, restaurantName restaurantName, people people, orderDate orderDate, orderTime orderTime, phone phone"
-          + " from ordercsv where phone like : phonenum";
+          + " from ordercsv where phone like :keyword";
 
       return connection.createQuery(query)
-          .addParameter("phonenum","%"+phonenum+"%")
+          .addParameter("keyword","%"+keyword+"%")
           .executeAndFetch(Order.class);
     }
   }

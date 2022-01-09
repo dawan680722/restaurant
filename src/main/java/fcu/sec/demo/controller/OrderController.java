@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 public class OrderController {
 
-
   @Autowired
   OrderService orderManager;
 
@@ -23,8 +22,8 @@ public class OrderController {
     return orderManager.getOrders();
   }
 
-  @GetMapping("/orders/{phonenum}")
-  public List<Order> getOrderp(@PathVariable("phonenum")String phonenum){
-    return orderManager.getOrderp(phonenum);
+  @GetMapping("/orders/{keyword}")
+  public List<Order> getOrderp(@PathVariable("keyword")String keyword){
+    return orderManager.getOrderp(keyword);
   }
 }
